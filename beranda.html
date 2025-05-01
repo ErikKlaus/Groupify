@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda Groupify</title>
+    <title>Groupify</title>
+    <script src="backend.js" defer></script>
 </head>
 <body>
+    <h1>Groupify</h1>
+    <p>Masukkan daftar nama (pisahkan dengan koma):</p>
     
+    <form id="formKelompok">
+        <textarea id="daftarNama" rows="5" cols="50" placeholder="Contoh: Andi, Budi, Cici, Dodi"></textarea><br><br>
+
+        <label>Gunakan sistem pot?</label><br>
+        <input type="radio" id="pakaiPotYa" name="pakaiPot" value="ya" checked>
+        <label for="pakaiPotYa">Ya</label><br>
+        <input type="radio" id="pakaiPotTidak" name="pakaiPot" value="tidak">
+        <label for="pakaiPotTidak">Tidak</label><br><br>
+
+        <div id="bagianPot">
+            <label for="jumlahPot">Jumlah Pot:</label>
+            <input type="number" id="jumlahPot" name="jumlahPot" min="1"><br><br>
+        </div>
+
+        <label for="jumlahKelompok">Jumlah Kelompok:</label>
+        <input type="number" id="jumlahKelompok" name="jumlahKelompok" min="1"><br><br>
+
+        <button type="submit">Generate</button>
+    </form>
+
+    <hr>
+    <h2>Hasil</h2>
+    <div id="areaHasil"></div>  
 </body>
 </html>
