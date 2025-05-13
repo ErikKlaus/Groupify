@@ -119,11 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
             let hasilSalinan = '';
 
             if (daftarInput.length === 0) {
-                areaHasil.innerHTML = '<p class="error-message">Masukkan daftar nama terlebih dahulu.</p>';
+                areaHasil.innerHTML = '<p class="error-message">Masukkan daftar nama terlebih dahulu, silakan refresh browser.</p>';
                 return;
             }
             if (isNaN(jumlahKelompok) || jumlahKelompok < 1) {
-                areaHasil.innerHTML = '<p class="error-message">Masukkan jumlah kelompok yang valid.</p>';
+                areaHasil.innerHTML = '<p class="error-message">Masukkan jumlah kelompok yang valid, silakan refresh browser.</p>';
                 return;
             }
 
