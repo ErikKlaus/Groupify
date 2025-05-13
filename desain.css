@@ -245,4 +245,12 @@ select:focus {
     outline: none;
 }
 
+.loading-placeholder {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* atur sesuai kebutuhan */
+    font-weight: bold;
+  }
   
