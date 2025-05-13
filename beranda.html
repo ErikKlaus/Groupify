@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groupify</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="desain.css">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; padding: 20px; }
-        textarea { width: 100%; }
-        .hasil { margin-top: 20px; }
+        textarea { width: 100%; resize: none;}
+        .hasil { margin-bottom: 20px; }
         .kelompok { margin-bottom: 20px; }
         .kelompok h3 { color: #333; }
         .kelompok ul { list-style-type: none; padding-left: 0; }
@@ -19,26 +21,40 @@
     </style>
 </head>
 <body>
-    <h1>Groupify</h1>
-    <p>Masukkan daftar nama (gunakan tanda #pot, contoh: Andi#1, Budi#2, Cici#1):</p>
-    <form id="formKelompok">
-        <textarea id="daftarNama" rows="5" placeholder="Contoh: Andi#1, Budi#2, Cici#1"></textarea><br><br>
+    <nav style="display: flex; align-items: center; margin-bottom: 10px ;">
+        <img src="https://media-hosting.imagekit.io/664c02a80acd4a36/Logo%20Website.png?Expires=1841769327&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=qSJs45ZO6EGDQaUOxqqKlQhlCwecdChROjS-IKFWzCiU9GhtbzLCqAm~wR2bAolQOD4pI2V2o2F9vKA9A9WyjzDS6xGi-swJhcdZrQdtji4psnkZc-UyoZFbHYYgHAInPlAY6hsJrcUAIdbtd-luMLFv5bL-Rsb6f0jE4LYEOxIwyg-p-CVYbRbdXp6hriB72IuPZyAJDKwxbyjkSWYk~GUzq-8nfQTe5Xu7DQ5LvDemcfXetx9Ks6snpLjmpS6oNW~saO2xicD7vW7w24I9kkeUDdVWap9x9UYqcOuVAp9parDTuh3mbJ9GMXGcRGrMfX4-oBZx8SSZjbGZCKmHpQ__" 
+             alt="Logo Groupify" 
+             style="width: 160px; height: auto; display: block;" />
+      </nav>
+    <div class="container">
+        <div class="sidebar">
+            <p><b>Masukkan daftar nama</b></p>
+            <p style="margin-bottom: 5px;"><i>(Jika ingin menggunakan sistem pot maka gunakan #, contoh: Harmoni#1, Erik#2, Yasir#1):</i></p>
+            <form id="formKelompok">
+                <textarea id="daftarNama" rows="12" placeholder="Masukkan daftar nama, pisahkan dengan koma (,)..."></textarea><br><br>
 
-        <label>Gunakan sistem pot?</label><br>
-        <input type="radio" id="pakaiPotYa" name="pakaiPot" value="ya">
-        <label for="pakaiPotYa">Ya</label><br>
-        <input type="radio" id="pakaiPotTidak" name="pakaiPot" value="tidak" checked>
-        <label for="pakaiPotTidak">Tidak</label><br><br>
+                <label>Gunakan sistem pot?</label><br>
+                <div style="display: flex; align-items: center; gap: 7px; margin: 0;">
+                    <input type="radio" id="pakaiPotYa" name="pakaiPot" value="ya">
+                    <label for="pakaiPotYa">Ya</label><br>
+                    <input type="radio" id="pakaiPotTidak" name="pakaiPot" value="tidak" checked>
+                    <label for="pakaiPotTidak">Tidak</label><br><br>
+                </div>
+                <div class="pot-list" id="areaPot"></div>
+                
+                <label for="jumlahKelompok">Jumlah Kelompok:</label>
+                <select id="jumlahKelompok" name="jumlahKelompok"></select><br><br>
 
-        <div class="pot-list" id="areaPot"></div>
+                <button id="btnSalin" type="submit">
+                    <span id="textSalin">Acak</span>
+                    <i class="fas fa-random"></i>
+                  </button>
+        </div>
 
-        <label for="jumlahKelompok">Jumlah Kelompok:</label>
-        <input type="number" id="jumlahKelompok" name="jumlahKelompok" min="1"><br><br>
-
-        <button type="submit">Generate</button>
-    </form>
-
-    <div class="hasil" id="areaHasil"></div>
+        <div class="main-content">
+            <div class="hasil" id="areaHasil"></div>
+        </div>
+    </div>
 
     <script src="backend.js"></script>
 </body>
